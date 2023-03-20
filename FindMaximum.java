@@ -8,43 +8,22 @@ public class FindMaximum<T extends Comparable<T>> {
         this.x = x;
         this.y = y;
         this.z = z;
-    } // Refactor2- Parameterized Constructor
+    }
 
     public T testMaximum(){
         return FindMaximum.testMaximum(x,y,z);
-    } // Refactor2- testMaximum method to call internally
-
-
-    /*
-    public static void maximumOfInteger(Integer x, Integer y, Integer z){
-        Integer max= x;
-        if((y.compareTo(max))>0) max=y;
-        if((z.compareTo(max))>0) max=z;
-        System.out.println("Maximum of "+x+", "+y+" and "+z+" is: "+max);
     }
-
-    public static void maximumOfFloat(Float x, Float y, Float z){
-        Float max=x;
-        if((y.compareTo(max))>0) max=y;
-        if((z.compareTo(max))>0) max=z;
-        System.out.println("Maximum of "+x+", "+y+" and "+z+" is: "+max);
-    }
-
-    public static void maximumOfString(String x, String y, String z){
-        String max=x;
-        if((y.compareTo(max))>0) max=y;
-        if((z.compareTo(max))>0) max=z;
-        System.out.println("Maximum of "+x+", "+y+" and "+z+" is: "+max);
-    }
-     */ //Refactor1- all 3 methods to one generic maximumOf method()
-
 
     public static <T extends Comparable<T>> T testMaximum(T x, T y, T z){
         T max=x;
         if((y.compareTo(max))>0) max=y;
         if((z.compareTo(max))>0) max=z;
-        System.out.println("Maximum of "+x+", "+y+" and "+z+" is: "+max);
+        printMax(x,y,z,max);
         return max;
+    }
+
+    public static <T> void printMax(T x, T y, T z, T max){
+        System.out.println("Maximum of "+x+", "+y+" and "+z+" is: "+max);
     }
 
     public static void main(String[] args) {
